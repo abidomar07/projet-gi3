@@ -6,19 +6,18 @@ import SearchBar from './SearchBar'
 const SearchBarMeta: ComponentMeta<typeof SearchBar> = {
     title: "Search bar",
     component: SearchBar,
-    argTypes:{
-    //    type:{
-    //     options: ['link', 'button'],
-    //     control: { type: 'radio' },
-    //    }
+    argTypes: {
+
     },
     args: {
         searchPhrase: 'Artist Exp',
-        setSearchPhrase : (newSearchPhrase)  => {console.log('search string',newSearchPhrase);}
+        setSearchPhrase: (newSearchPhrase) => { console.log('search string', newSearchPhrase); },
+        clicked: false,
+        setClicked: (newclicked: boolean) => { console.log('search string newclicked', newclicked); }
     }
 }
 
 export default SearchBarMeta;
 
 type SearchBarStory = ComponentStory<typeof SearchBar>
-export const SearchBarLeftLoop : SearchBarStory = (args) => <SearchBar {...args} />
+export const SearchBarRightLoop: SearchBarStory = (args) => <SearchBar {...args} />

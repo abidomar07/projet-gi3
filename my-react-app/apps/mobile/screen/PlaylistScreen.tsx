@@ -1,8 +1,11 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-import { TestComp } from '@my-workspace/my-ui'
+import { TestComp, SearchBar } from '@my-workspace/my-ui'
 
 const PlaylistScreen = ({ navigation }) => {
+    const [searchPhrase, setSearchPhrase] = useState("");
+    const [clicked, setClicked] = useState(false);
+    
     const [playlist] = useState([{
         name: "video 1",
         urlMp4: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
@@ -22,6 +25,12 @@ const PlaylistScreen = ({ navigation }) => {
     return (
         <View>
             <TestComp message='messgae from playlist' />
+            <SearchBar
+                searchPhrase={searchPhrase}
+                setSearchPhrase={setSearchPhrase}
+                clicked={clicked}
+                setClicked={setClicked}
+            />
             {playlist.map(p => {
                 return (
                     <TouchableOpacity onPress={() => navigation.navigate("Home", { ...p })}>
