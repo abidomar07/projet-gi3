@@ -21,3 +21,9 @@ export default SearchBarMeta;
 
 type SearchBarStory = ComponentStory<typeof SearchBar>
 export const SearchBarRightLoop: SearchBarStory = (args) => <SearchBar {...args} />
+export const CardType2: SearchBarStory = (args) => <SearchBar {...args} />;
+
+CardType2.args = {
+  ...SearchBarMeta.args,
+  bgColor : 'red'
+};
