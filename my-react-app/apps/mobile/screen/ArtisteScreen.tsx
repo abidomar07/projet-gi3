@@ -1,25 +1,42 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { useState } from 'react'
+import { CustomCard } from "@my-workspace/my-ui";
 
 const ArtisteScreen = () => {
 
-    const listArtiste = [{
-        name : "Jenny Wilson",
-        followers : "694, 856 Followers",
-        image : "-----.png"
-    }]
+  const listArtiste = useState([
+    {
+      title: 'Image 1',
+      description: 'This is a description for Image 1',
+      uri: 'https://picsum.photos/200'
+    },
+    {
+      title: 'Image 2',
+      description: 'This is a description for Image 2',
+      uri: 'https://picsum.photos/200'
+    },
+    {
+      title: 'Image 3',
+      description: 'This is a description for Image 3',
+      uri: 'https://picsum.photos/200'
+    },
+    {
+      title: 'Image 4',
+      description: 'This is a description for Image 4',
+      uri: 'https://picsum.photos/200'
+    }
+  ]);
   return (
     <View>
 
-   {listArtiste.map(p=>{return(
-                <TouchableOpacity>
-                    <Text> {p.name} </Text>
-                </TouchableOpacity>
-            )})}
+      <CustomCard listArtiste={listArtiste} />
+
     </View>
-  )
-}
+  );
+};
 
-export default ArtisteScreen
 
-const styles = StyleSheet.create({})
+
+const styles = StyleSheet.create({});
+export default ArtisteScreen;
