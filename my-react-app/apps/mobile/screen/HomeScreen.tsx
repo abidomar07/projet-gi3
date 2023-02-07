@@ -100,7 +100,7 @@ const HomeScreen = ({ navigation, route }) => {
 
 
                 <Cover
-                    borderRadius={10}
+                    borderR={10}
                     imageUrl={dataPlayer.poster}
                 />
 
@@ -127,36 +127,39 @@ const HomeScreen = ({ navigation, route }) => {
                 />
             </View>
             <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
-                <RoundButtonMusic
+                {/* <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevrons-left" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue - 10) }}
                     size={50}
-                />
+                /> */}
 
                 <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevron-left" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue - 2) }}
                     size={50}
-                /> <RoundButtonMusic
+                />
+                 <RoundButtonMusic
                     backgroundColor="blue"
                     icon={isPlaying ? <FontAwesome name="pause" size={24} color="white" /> : <FontAwesome name="play" size={24} color="white" />}
                     onClickButton={() => { handlePlay(!isPlaying) }}
                     size={50}
-                /> <RoundButtonMusic
+                /> 
+                <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevron-right" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue + 2) }}
 
                     size={50}
-                /> <RoundButtonMusic
+                /> 
+                {/* <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevrons-right" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue + 10) }}
 
                     size={50}
-                />
+                /> */}
 
             </View>
             <View style={{ flex: 2 }}></View>
