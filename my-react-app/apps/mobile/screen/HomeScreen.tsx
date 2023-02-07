@@ -100,7 +100,7 @@ const HomeScreen = ({ navigation, route }) => {
 
 
                 <Cover
-                    borderRadius={150}
+                    BorderR={100}
                     imageUrl={dataPlayer.poster}
                 />
 
