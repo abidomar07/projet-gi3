@@ -18,12 +18,29 @@ const ImageItem = ({ item }) => {
 const CustomCard = (props) => {
   return (
     <View style={styles.container}>
-      {props.listArtiste.map((item, index) => (
-        <TouchableOpacity key={index} style={styles.itemContainer}>
-          <ImageItem item={item} />
-        </TouchableOpacity>
-      ))}
-    </View>
+
+      {props.listArtiste.map((item, index) => {
+
+        {
+          // when no input, show all
+          if (props.searchPhrase === "") {
+            return (<TouchableOpacity key={index} style={
+              styles.itemContainer
+            } >
+              <ImageItem item={item} />
+            </TouchableOpacity>)
+          }
+          // filter of the name
+          if (item.title.toUpperCase().includes(props.searchPhrase.toUpperCase().trim().replace(/\s/g, ""))) {
+            return (
+              <TouchableOpacity key={index} style={styles.itemContainer}>
+                <ImageItem item={item} />
+              </TouchableOpacity>)
+          }
+        }
+
+      })}
+    </View >
   );
 };
 
@@ -43,8 +60,8 @@ const styles = StyleSheet.create({
   imageContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
-    shadowColor: '#000',   
-    shadowOpacity: 0.25,  
+    shadowColor: '#000',
+    shadowOpacity: 0.25,
     elevation: 5,
     padding: 10
   },

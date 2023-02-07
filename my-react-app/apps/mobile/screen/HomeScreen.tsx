@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { UpNextButton, RoundButtonMusic, Cover } from '@my-workspace/my-ui'
 import { AntDesign, Feather } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
-import { FontAwesome } from '@expo/vector-icons';
+import {  Entypo, FontAwesome } from "@expo/vector-icons";
 
 
 import { Video, AVPlaybackStatus } from 'expo-av';

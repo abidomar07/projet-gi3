@@ -95,11 +95,14 @@ import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-nativ
 import { Keyboard, Button } from "react-native";
 // import { Feather, Entypo } from "@expo/vector-icons";
 
+
 interface Props {
     searchPhrase: string
     setSearchPhrase: (searchPhrase: string) => void
     clicked: boolean
     setClicked: (clicked: boolean) => void
+    loopIcon: string
+    closeIcon: string
 }
 
 const SearchBar: React.FC<Props> = ({
@@ -107,22 +110,10 @@ const SearchBar: React.FC<Props> = ({
     setSearchPhrase,
     clicked,
     setClicked,
+    loopIcon,
+    closeIcon
 }) => {
     return (
-        // <View>
-        //     <TextInput
-        //         value={searchPhrase}
-        //         onChangeText={text => setSearchPhrase(text)}
-        //         placeholder="Search..."
-        //         style={{ padding: 10, borderWidth: 1, borderColor: '#ccc' }}
-        //     />
-        //     <TouchableOpacity
-        //         onPress={() => setClicked(!clicked)}
-        //         style={{ padding: 10 }}
-        //     >
-        //         <Text>Submit</Text>
-        //     </TouchableOpacity>
-        // </View>
         <View style={styles.container}>
             <View
                 style={
@@ -140,6 +131,10 @@ const SearchBar: React.FC<Props> = ({
                         setClicked(true);
                     }}
                 />
+                {loopIcon}
+                {clicked && (
+                    closeIcon
+                )}
                 {/* <Feather
                     name="search"
                     size={20}
