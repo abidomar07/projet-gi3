@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation, route }) => {
     }, [isPlaying])
 
     return (
-        <View style={{ flex: 1, width: 350, backgroundColor: "#1F1D2B", justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, width: 350, backgroundColor: "red", justifyContent: 'center', alignItems: 'center' }}>
             <Text>{name}</Text>
 
             <Video
