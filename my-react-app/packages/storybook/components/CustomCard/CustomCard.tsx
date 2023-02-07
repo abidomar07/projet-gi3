@@ -3,14 +3,21 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 
 
-const ImageItem = ({ item }) => {
+const ImageItem = ({ item, hasIcon, icon,navigation }) => {
   return (
     <View style={styles.imageContainer}>
-      <Image source={{ uri: item.uri }} style={styles.image} />
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
-      </View>
+      <TouchableOpacity onPress={() => navigation.navigate("Home", { ...item })}>
+
+
+        <Image source={{ uri: item.uri }} style={styles.image} />
+        <View style={{ position: 'absolute', top: 10, right: 10 }}>
+          {hasIcon && icon}
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.description}>{item.description}</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -27,14 +34,14 @@ const CustomCard = (props) => {
             return (<TouchableOpacity key={index} style={
               styles.itemContainer
             } >
-              <ImageItem item={item} />
+              <ImageItem item={item} hasIcon={props.hasIcon} icon={props.icon} navigation={props.navigation}/>
             </TouchableOpacity>)
           }
           // filter of the name
           if (item.title.toUpperCase().includes(props.searchPhrase.toUpperCase().trim().replace(/\s/g, ""))) {
             return (
               <TouchableOpacity key={index} style={styles.itemContainer}>
-                <ImageItem item={item} />
+                <ImageItem item={item} hasIcon={props.hasIcon} icon={props.icon} navigation={props.navigation} />
               </TouchableOpacity>)
           }
         }

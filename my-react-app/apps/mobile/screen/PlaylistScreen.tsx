@@ -1,7 +1,7 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { SearchBar, CustomCard } from '@my-workspace/my-ui'
-import { Feather, Entypo, FontAwesome } from "@expo/vector-icons";
+import { Feather, Entypo, FontAwesome,AntDesign } from "@expo/vector-icons";
 
 const PlaylistScreen = ({ navigation }) => {
     const [searchPhrase, setSearchPhrase] = useState("");
@@ -67,9 +67,7 @@ const PlaylistScreen = ({ navigation }) => {
                 }
                 
             })} */}
-            <CustomCard listArtiste={playlist} searchPhrase={searchPhrase} />
-
-
+            <CustomCard listArtiste={playlist} searchPhrase={searchPhrase} hasIcon={true} icon={<AntDesign name="hearto" size={24} color="black" />} navigation={navigation}/>
 
             <Button title='Artiste' onPress={() => { navigation.navigate('Artiste') }}>
             </Button>
