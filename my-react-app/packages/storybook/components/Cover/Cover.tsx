@@ -2,17 +2,18 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
 type CoverProp = {
-  borderRadius: number;
+  BorderR: number;
   imageUrl: string;
 };
 
 const Cover: React.FC<CoverProp> = (props) => {
-  const { borderRadius, imageUrl } = props;
+  const { BorderR, imageUrl } = props;
   return (
     <View>
       <ImageBackground
         source={{ uri: imageUrl }}
-        style={{ height: 100, width: 100, borderRadius }}
+        imageStyle={{ borderRadius:BorderR}}
+        style={{height: 100, width: 100}}
       ></ImageBackground>
     </View>
   );
